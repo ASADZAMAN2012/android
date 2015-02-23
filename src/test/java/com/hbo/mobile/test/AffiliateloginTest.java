@@ -29,7 +29,7 @@ public class AffiliateloginTest extends BaseTest
 
 
     //@Test
-    public void affiliatesLoginIpad() throws InterruptedException, IOException
+    public void affiliatesLoginAndroid() throws InterruptedException, IOException
     {
 
         homeScreen = new HomeScreen(driver, appType, device);
