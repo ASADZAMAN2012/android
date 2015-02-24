@@ -4,60 +4,87 @@ import com.hbo.mobile.pages.AffiliateSelectionScreen;
 import com.hbo.mobile.pages.AffiliatesLoginScreen;
 import com.hbo.mobile.pages.HomeScreen;
 import com.hbo.mobile.shared.Utils;
+
 import org.apache.log4j.Logger;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
  * Created by azaman on 11/6/14.
  */
-public class SingleAffiliateLoginTest extends BaseTest {
+public class SingleAffiliateLoginTest extends BaseTest 
+{
     private static Logger log = Logger.getLogger(SingleAffiliateLoginTest.class.getName());
 
     HomeScreen homeScreen = null;
     AffiliateSelectionScreen affiliateSelectionScreen = null;
     AffiliatesLoginScreen affiliatesLoginScreen = null;
-
+    Utils utils = null;
 
    //@Test
-    public void singleAffiliatesLoginAdvancedCable() throws InterruptedException, IOException {
+    public void singleAffiliatesLoginAdvancedCable() throws InterruptedException, IOException 
+    {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+        homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
+  
+        // Open the Excel file
+        FileInputStream fis = new FileInputStream("src/test/testdata/iPadAffiliateLogin.xls");
+        // Access the required test data sheet
+        HSSFWorkbook wb = new HSSFWorkbook(fis);
+        HSSFSheet sheet = wb.getSheet("QA");
+        // Loop through all rows in the sheet
+        // Start at row 1 as row 0 is our header row
+        
+        
+        for (int count = 1; count <= sheet.getLastRowNum(); count++)
+        {
+            HSSFRow row = sheet.getRow(count);
+            HSSFCell cell = row.getCell(4, row.RETURN_BLANK_AS_NULL);
 
+            String execute = row.getCell(0).toString();
+            String affiliateName = row.getCell(1).toString();
+            String userid = row.getCell(2).toString();
+            String password = row.getCell(3).toString();
 
-        Thread.sleep(8000);
-        utils.waitForElement(driver.findElement(By.name("Sign In (Existing Users)"))).click();
-        utils.waitForElement(driver.findElement(By.name("Select Television Provider"))).click();
-        utils.waitForElement(driver.findElement(By.name("Advanced Cable"))).click();
-        //affiliateSelectionScreen.selectAffiliateOnAndroid("Advanced Cable");
-        driver.findElement(By.name("Email")).click();
-        utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]"))).sendKeys("hbotest1@acc.com");
-        driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[3]")).click(); // to click on blank space
-        driver.findElement(By.name("Password")).click();
-        utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.EditText[1]"))).sendKeys("acac#1111");
-        driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[3]")).click();
-        driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.Button[1]")).click();
-        Thread.sleep(5000);
+            log.info("Affiliates name : " + affiliateName);
+            log.info("Execute : " + execute);
 
+            log.info("Debug point 2");
 
-        //homeScreen.clickSignIn();
-
-        //affiliatesLoginScreen.affiliatesLogin("Advanced Cable", "hbotest1@acc.com", "acac#1111");
+            if (execute.equalsIgnoreCase("yes"))
+            {
+                log.info("=========================================================");
+                log.info("Login Test Started for  : ' " + affiliateName + " '");
+                log.info("=========================================================");
+                
+                
+                Thread.sleep(8000);
+                homeScreen.clickSignInExistingUser();
+                affiliateSelectionScreen.selectAffiliate(affiliateName);
+                affiliatesLoginScreen.affiliatesLogin(affiliateName, userid, password);
+                
+            }
+        }
 
     }
 
     //@Test
     public void singleAffiliatesLoginAntietam() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(9000);
@@ -77,10 +104,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     @Test
     public void singleAffiliatesLoginArmstrong() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
 
@@ -101,10 +128,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test    /// dif
     public void singleAffiliatesLoginAstound() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(9000);
@@ -125,10 +152,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test  //dif
     public void singleAffiliatesLoginAtntTv() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(9000);
@@ -148,10 +175,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test /// diff
     public void singleAffiliatesLoginAtlanticBroadband() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -172,10 +199,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test
     public void singleAffiliatesLoginAtmc() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -196,10 +223,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test ///dif
     public void singleAffiliatesLoginBendBroadband() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -220,10 +247,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test //dif
     public void singleAffiliatesLoginBlueRidgeCommunications() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -244,10 +271,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test
     public void singleAffiliatesLoginBrightHouseNetworks() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -268,10 +295,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test
     public void singleAffiliatesLoginBuckeyeCableSystem() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -295,10 +322,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test
     public void singleAffiliatesLoginBurlingtonTelecom() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -322,11 +349,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test
     public void singleAffiliatesLoginBVuOptiNet() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
-
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
         Thread.sleep(8000);
         utils.waitForElement(driver.findElement(By.name("Sign In (Existing Users)"))).click();
@@ -345,10 +371,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test
     public void singleAffiliatesLoginCableOne() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -368,10 +394,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
     //@Test
     public void singleAffiliatesLoginCedarFallsUtilities() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -391,10 +417,10 @@ public class SingleAffiliateLoginTest extends BaseTest {
    // @Test
     public void singleAffiliatesLoginCenturyLinkPrism() throws InterruptedException, IOException {
 
-        homeScreen = new HomeScreen(driver, appType, device);
-        affiliateSelectionScreen = new AffiliateSelectionScreen(driver, appType);
-        affiliatesLoginScreen = new AffiliatesLoginScreen(driver, appType);
-        Utils utils = new Utils(driver, appType);
+    	homeScreen = new HomeScreen(driver);
+        affiliateSelectionScreen = new AffiliateSelectionScreen(driver);
+        affiliatesLoginScreen = new AffiliatesLoginScreen(driver);
+        utils = new Utils(driver);
 
 
         Thread.sleep(8000);
@@ -1887,90 +1913,5 @@ public class SingleAffiliateLoginTest extends BaseTest {
 //        driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.Button[1]")).click();
 //        Thread.sleep(5000);
 //    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

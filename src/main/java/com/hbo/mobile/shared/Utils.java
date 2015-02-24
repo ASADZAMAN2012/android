@@ -19,11 +19,9 @@ public class Utils
     int timeoutInSeconds = 30;
 
 
-    public Utils(AppiumDriver driver, String appType)
+    public Utils(AppiumDriver driver)
     {
         this.driver = driver;
-        this.appType = appType;
-        //PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public boolean isElementPresent(WebElement element)
