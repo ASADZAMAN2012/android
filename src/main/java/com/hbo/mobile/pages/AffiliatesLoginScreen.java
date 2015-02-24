@@ -31,6 +31,7 @@ public class AffiliatesLoginScreen
     @AndroidFindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")
     private WebElement userNameTextbox;
 
+
     @AndroidFindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.EditText[1]")
     private WebElement passwordTextbox;
 
@@ -74,6 +75,86 @@ public class AffiliatesLoginScreen
                 driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAScrollView[1]/UIAWebView[1]/UIATextField[2]")).sendKeys(userId);
                 log.info("User Name typed : '" + userId + "'");
             }
+            else if(affiliateName.equalsIgnoreCase("AdvancedCable"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Antietam"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Armstrong"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Astound"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("AT&T U-verse TV"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Atlantic Broadband"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("ATMC"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("BendBroadband"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Blue Ridge Communications"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Bright House Networks"))
+            {
+                utils.waitForElement(userNameTextbox).click();
+                utils.waitForElement(userNameTextbox).click();
+                TimeUnit.SECONDS.sleep(9);
+                driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
             else {
 
                 TimeUnit.SECONDS.sleep(1);
@@ -93,6 +174,16 @@ public class AffiliatesLoginScreen
                 TimeUnit.SECONDS.sleep(2);
                 driver.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIASecureTextField[1]").sendKeys(password);
             }
+            else if(affiliateName.equalsIgnoreCase("AdvancedCable"))
+            {
+                TimeUnit.SECONDS.sleep(2);
+                driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.EditText[1]").sendKeys(password);
+            }
+            else if(affiliateName.equalsIgnoreCase("Antietam"))
+            {
+                TimeUnit.SECONDS.sleep(2);
+                driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.EditText[1]").sendKeys(password);
+            }
             else {
                 TimeUnit.SECONDS.sleep(2);
                 blank.click();
@@ -108,6 +199,18 @@ public class AffiliatesLoginScreen
             {
                 driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[2]")).click();
                 log.info("Cable ONE Submit button clicked");
+                TimeUnit.SECONDS.sleep(5);
+            }
+            else if(affiliateName.equalsIgnoreCase("AdvancedCable"))
+            {
+                driver.findElement(By.xpath("")).click();
+                log.info("Charter Submit button clicked");
+                TimeUnit.SECONDS.sleep(5);
+            }
+            else if(affiliateName.equalsIgnoreCase("Antietam"))
+            {
+                driver.findElement(By.xpath("")).click();
+                log.info("Charter Submit button clicked");
                 TimeUnit.SECONDS.sleep(5);
             }
             else if(affiliateName.equalsIgnoreCase("Charter"))

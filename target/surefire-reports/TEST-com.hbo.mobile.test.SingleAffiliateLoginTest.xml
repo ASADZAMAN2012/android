@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.hbo.mobile.test.SingleAffiliateLoginTest" time="93.49" errors="1" skipped="0">
+<testsuite tests="1" failures="0" name="com.hbo.mobile.test.SingleAffiliateLoginTest" time="96.485" errors="0" skipped="0">
   <properties>
     <property name="app" value="Android"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -63,73 +63,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.hbo.mobile.test.SingleAffiliateLoginTest" name="singleAffiliatesLoginCableOne" time="93.49">
-    <error message="An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 30.18 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.43.1&apos;, revision: &apos;5163bceef1bc36d43f3dc0b83c88998168a363a0&apos;, time: &apos;2014-09-10 09:43:55&apos;
-System info: host: &apos;Mushfiques-MacBook-Pro.local&apos;, ip: &apos;192.168.1.74&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.1&apos;, java.version: &apos;1.8.0_31&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=/Users/mushfiquesalaheen/Documents/HBO/HBOAndroidMobileAutomation/src/test/app/hbogo.apk, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=4d00cd9d46635039, platform=LINUX, desired={app=/Users/mushfiquesalaheen/Documents/HBO/HBOAndroidMobileAutomation/src/test/app/hbogo.apk, browserName=, platformName=Android, deviceName=4d00cd9d46635039}, platformVersion=4.1, webStorageEnabled=false, locationContextEnabled=false, browserName=, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
-Session ID: ea5d80ad-0ba6-4267-ba7d-90ae1d71d03c" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 30.18 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.43.1&apos;, revision: &apos;5163bceef1bc36d43f3dc0b83c88998168a363a0&apos;, time: &apos;2014-09-10 09:43:55&apos;
-System info: host: &apos;Mushfiques-MacBook-Pro.local&apos;, ip: &apos;192.168.1.74&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.1&apos;, java.version: &apos;1.8.0_31&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{app=/Users/mushfiquesalaheen/Documents/HBO/HBOAndroidMobileAutomation/src/test/app/hbogo.apk, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=4d00cd9d46635039, platform=LINUX, desired={app=/Users/mushfiquesalaheen/Documents/HBO/HBOAndroidMobileAutomation/src/test/app/hbogo.apk, browserName=, platformName=Android, deviceName=4d00cd9d46635039}, platformVersion=4.1, webStorageEnabled=false, locationContextEnabled=false, browserName=, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
-Session ID: ea5d80ad-0ba6-4267-ba7d-90ae1d71d03c
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:176)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:425)
-	at org.openqa.selenium.By$ByName.findElement(By.java:299)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at com.hbo.mobile.test.SingleAffiliateLoginTest.singleAffiliatesLoginCableOne(SingleAffiliateLoginTest.java:358)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</error>
-    <system-out> INFO 2015-02-22 18:35:51,868[mm:ss] (BaseTest.java:startMobileApp:86) - Android APP opened
- INFO 2015-02-22 18:37:11,809[mm:ss] (BaseTest.java:stopMobileApp:106) - Android App closed
-</system-out>
-    <system-err>log4j:WARN File option not set for appender [fileAppender].
-log4j:WARN Are you using FileAppender instead of ConsoleAppender?
-log4j:ERROR No output stream or file set for the appender named [fileAppender].
-</system-err>
-  </testcase>
+  <testcase classname="com.hbo.mobile.test.SingleAffiliateLoginTest" name="singleAffiliatesLoginArmstrong" time="96.485"/>
 </testsuite>

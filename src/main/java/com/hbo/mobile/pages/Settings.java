@@ -26,7 +26,7 @@ public class Settings
 
     @AndroidFindBy(name="Video Playback")
     @iOSFindBy(name="Video Playback")
-    private WebElement videoPlayback ;
+    private WebElement videoPlayback;
 
     @AndroidFindBy(name="Help")
     @iOSFindBy(name="Help")
@@ -71,7 +71,7 @@ public class Settings
         }
         else if(device.contains("ipadSimulator"))
         {
-            videoPlayback.click();
+            videoPlayback.click(); // driver.findelement(By.name="video").click();
             log.info("video play button clicked");
         }
         else if(device.contains("iphoneSimulator"))
