@@ -26,6 +26,7 @@ public class AffiliatesLoginScreen
     Utils utils = null;
 
     @AndroidFindBy(xpath = "//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]")
+                            ////android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]
     private WebElement userNameTextbox;
 
 
@@ -58,21 +59,87 @@ public class AffiliatesLoginScreen
 
             // **************** Enter User Name *******************
            
-        	if(affiliateName.equalsIgnoreCase(""))
+        	if(affiliateName.equalsIgnoreCase("Armstrong"))
             {
-                utils.waitForElement(userNameTextbox).click();
-                utils.waitForElement(userNameTextbox).sendKeys(userId);
+                utils.waitForElement(driver.findElement(By.name("Username"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[4]/android.widget.EditText[1]"))).sendKeys(userId);
                 log.info("User Name typed : '" + userId + "'");
             }
         	
-        	else if(affiliateName.equalsIgnoreCase(""))
+        	else if(affiliateName.equalsIgnoreCase("Astound"))
             {
-                utils.waitForElement(userNameTextbox).click();
-                utils.waitForElement(userNameTextbox).sendKeys(userId);
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[5]/android.widget.EditText[1]"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[5]/android.widget.EditText[1]"))).sendKeys(userId);
                 log.info("User Name typed : '" + userId + "'");
             }
-        	
-        	else 
+            else if(affiliateName.equalsIgnoreCase("AT&T U-verse TV"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Username"))).click();
+                utils.waitForElement(driver.findElement(By.name("Username"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Atlantic Broadband"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Email Address"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("ATMC"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Email"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("BendBroadband"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Email"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Blue Ridge Communications"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Username"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[4]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Buckeye CableSystem"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Email"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Burlington Telecom"))
+            {
+                utils.waitForElement(driver.findElement(By.name("TV"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("BVU OptiNet"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Email"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.ListView[1]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Cable ONE"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Username:"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.EditText[1]"))).sendKeys(userId);
+                log.info("User Name typed : '" + userId + "'");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            else
         	{
                 TimeUnit.SECONDS.sleep(1);
                 utils.waitForElement(userNameTextbox).click();
@@ -85,21 +152,74 @@ public class AffiliatesLoginScreen
 
             // **************** Enter Password *******************
             
-        	if(affiliateName.equalsIgnoreCase(""))
+        	if(affiliateName.equalsIgnoreCase("Armstrong"))
             {
-                utils.waitForElement(passwordTextbox).click();
-                utils.waitForElement(passwordTextbox).sendKeys(password);
+                utils.waitForElement(driver.findElement(By.name("Password"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[6]/android.widget.EditText[1]"))).sendKeys(password);
                 log.info("Password typed : '" + userId + "'");
             }
         	
-        	else if(affiliateName.equalsIgnoreCase(""))
+        	else if(affiliateName.equalsIgnoreCase("Astound"))
             {
-                utils.waitForElement(passwordTextbox).click();
-                utils.waitForElement(passwordTextbox).sendKeys(password);
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[7]/android.widget.EditText[1]"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("\"//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[7]/android.widget.EditText[1]"))).sendKeys(password);
                 log.info("Password typed : '" + userId + "'");
             }
-        	
-        	else 
+            else if(affiliateName.equalsIgnoreCase("AT&T U-verse TV"))
+            {
+            utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[5]/android.widget.EditText[1]"))).click();
+            utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[5]/android.widget.EditText[1]"))).sendKeys(password);
+            log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Atlantic Broadband"))
+            {
+            utils.waitForElement(driver.findElement(By.name("Password"))).click();
+            utils.waitForElement(driver.findElement(By.name("Password"))).sendKeys(password);
+            log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("ATMC"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Password"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.EditText[1]"))).sendKeys(password);
+                log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("BendBroadband"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Password"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[4]/android.widget.EditText[2]"))).sendKeys(password);
+                log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Blue Ridge Communications"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Password"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[4]/android.widget.EditText[2]"))).sendKeys(password);
+                log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Buckeye CableSystem"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Password"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.EditText[1]"))).sendKeys(password);
+                log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Burlington Telecom"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Password"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.EditText[2]"))).sendKeys(password);
+                log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("BVU OptiNet"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Password"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.EditText[1]"))).sendKeys(password);
+                log.info("Password typed : '" + userId + "'");
+            }
+            else if(affiliateName.equalsIgnoreCase("Cable ONE"))
+            {
+                utils.waitForElement(driver.findElement(By.name("Password:"))).click();
+                utils.waitForElement(driver.findElement(By.xpath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.view.View[1]/android.widget.EditText[2]"))).sendKeys(password);
+                log.info("Password typed : '" + userId + "'");
+            }
+            else
         	{
                 TimeUnit.SECONDS.sleep(1);
                 utils.waitForElement(passwordTextbox).click();

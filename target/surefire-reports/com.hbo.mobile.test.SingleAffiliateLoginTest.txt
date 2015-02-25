@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.hbo.mobile.test.SingleAffiliateLoginTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 96.524 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 97.226 sec
